@@ -1,0 +1,261 @@
+<html>
+    <style>
+        .container {
+        width: 100vw;
+        height: 100vh;
+        background: #6C7A89;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center
+        }
+        .box {
+        width: 75%;
+        height: 85%;
+        border-radius: 15px;  
+        white-space: nowrap; 
+        
+        }
+        .controls{
+            height: 34%;
+            background-color: #434544;
+            border-radius:  15px 15px 0px 0px; 
+            
+        }
+        .tracks{
+            height: 66%;
+            background-color: #434544;
+            border-radius: 0px 0px 15px 15px; 
+        }
+        .track-name{
+            width: 16%;
+            height: 50px;
+            text-align: right;
+            display: inline-block;
+            font-size: 25;
+            
+            color: rgb(145, 133, 133);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: auto;
+             
+        }        
+        .steps{
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgb(36, 29, 29);
+            background-color: rgb(41, 39, 39); /*#5a6477;*/
+            border-radius:  10px; 
+            text-align: right;
+            display: inline-block;
+            font-size: 40;
+                
+        }
+        .selected{
+            /* background-image: radial-gradient(circle, rgb(86, 235, 67), #5a6477); */
+            background-color: yellowgreen;
+        }
+        .step_number{
+            width: 50px;
+            height: 5%;
+            border: 2px solid rgb(44, 41, 41);           
+            border-radius:  10px; 
+            text-align: center;
+            display: inline-block;
+            font-size: 20;
+            margin-bottom: 10px;
+        }
+        .play{
+            width: 60%;
+        height: 100%;
+        
+        align-items: center;
+        margin: auto;
+        }
+        .play_button{
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgb(36, 29, 29);
+            background-color: rgb(41, 39, 39); /*#5a6477;*/
+            border-radius:  10px; 
+            text-align: right;
+            display: inline-block;
+            font-size: 40;
+            color: orange;
+        }
+        body {
+        margin: 0px;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        }
+        </style>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.js"></script> -->
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="controls">
+                    <div class="play">
+                        <br><br>
+                    <div class="play_button" onclick="play_pattern()">&#9658</div>
+                </div>
+                </div>
+                <div class="tracks">
+                    <div class='track-name'></div>
+                    <div  class = 'step_number' id='step_0' data-step = 1> 1</div>
+                    <div  class = 'step_number' id='step_1' data-step = 1 >2</div>
+                    <div  class = 'step_number' id='step_2' data-step = 2 >3</div>
+                    <div  class = 'step_number' id='step_3' data-step = 3 >4</div>
+                    <div  class = 'step_number' id='step_4' data-step = 4 >5</div>
+                    <div  class = 'step_number' id='step_5' data-step = 5 >6</div>
+                    <div  class = 'step_number' id='step_6' data-step = 6 >7</div>
+                    <div  class = 'step_number' id='step_7' data-step = 7 >8</div>
+                    <div  class = 'step_number' id='step_8' data-step = 8 >9</div>
+                    <div  class = 'step_number' id='step_9' data-step = 9 >10</div>
+                    <div  class = 'step_number' id='step_10' data-step = 10 >11</div>
+                    <div  class = 'step_number' id='step_11' data-step = 11 >12</div>
+                    <div  class = 'step_number' id='step_12' data-step = 12 >13</div>
+                    <div  class = 'step_number' id='step_13' data-step = 13 >14</div>
+                    <div  class = 'step_number' id='step_14' data-step = 14 >15</div>
+                    <div  class = 'step_number' id='step_15' data-step = 15 >16</div>
+                    <br>
+                    <div></div>
+                    <div class='track-name'>Kick</div>
+                    <div class='steps' id='0_0' data-step = 0 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_1' data-step = 1 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_2' data-step = 2 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_3' data-step = 3 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_4' data-step = 4 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_5' data-step = 5 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_6' data-step = 6 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_7' data-step = 7 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_8' data-step = 8 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_9' data-step = 9 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_10' data-step = 10 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_11' data-step = 11 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_12' data-step = 12 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_13' data-step = 13 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_14' data-step = 14 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='0_15' data-step = 15 data-track = 0 onclick="return clickStep(this.id)">&nbsp</div>
+                    <br>
+                    <div class='track-name'>Snare</div>
+                    <div class='steps' id='1_0' data-step = 0 data-track = 1 onclick="return clickStep(this.id)"> &nbsp</div>
+                    <div class='steps' id='1_1' data-step = 1 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_2' data-step = 2 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_3' data-step = 3 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_4' data-step = 4 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_5' data-step = 5 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_6' data-step = 6 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_7' data-step = 7 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_8' data-step = 8 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_9' data-step = 9 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_10' data-step = 10 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_11' data-step = 11 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_12' data-step = 12 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_13' data-step = 13 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_14' data-step = 14 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='1_15' data-step = 15 data-track = 1 onclick="return clickStep(this.id)">&nbsp</div>
+                    <br>
+                    <div class='track-name'>Cymbal</div>
+                    <div class='steps' id='2_0' data-step = 0 data-track = 2 onclick="return clickStep(this.id)"> &nbsp</div>
+                    <div class='steps' id='2_1' data-step = 1 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_2' data-step = 2 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_3' data-step = 3 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_4' data-step = 4 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_5' data-step = 5 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_6' data-step = 6 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_7' data-step = 7 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_8' data-step = 8 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_9' data-step = 9 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_10' data-step = 10 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_11' data-step = 11 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_12' data-step = 12 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_13' data-step = 13 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_14' data-step = 14 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                    <div class='steps' id='2_15' data-step = 15 data-track = 2 onclick="return clickStep(this.id)">&nbsp</div>
+                </div>
+            </div>
+            </div>
+    </body>
+</html>
+<script>
+
+
+    var kick = new Audio('kick.wav');
+    var kickVetor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    var snare = new Audio('snare.wav');
+    var snareVetor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    var cymbal = new Audio('cymbal.wav');
+    var cymbalVetor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    function clickStep(id){
+        step = document.getElementById(id)
+        var track = step.dataset.track;
+        step.classList.contains('selected') ? step.classList.remove('selected') : step.classList.add('selected');
+
+        switch(track){
+        case '0':
+            kickVetor[step.dataset.step] == 0 ? kickVetor[step.dataset.step] = 1 : kickVetor[step.dataset.step] = 0
+            kick.pause();
+                kick.currentTime = 0;
+            kick.play();
+            break;
+        case '1':
+            snareVetor[step.dataset.step] == 0 ? snareVetor[step.dataset.step] = 1 : snareVetor[step.dataset.step] = 0
+            snare.pause();
+                snare.currentTime = 0;
+            snare.play();
+            break;
+        case '2':
+            cymbalVetor[step.dataset.step] == 0 ? cymbalVetor[step.dataset.step] = 1 : cymbalVetor[step.dataset.step] = 0
+            cymbal.pause();
+                cymbal.currentTime = 0;
+            cymbal.play();
+            break;
+        } 
+            
+        
+    }
+        
+    var j = 0;    
+    function play_pattern(){
+        setInterval(function(){
+            step_number = document.getElementById('step_' + j);
+            step_number.classList.add('selected');
+            
+            if (j>0){
+                step_number_previous = document.getElementById('step_' + (j - 1));
+                step_number_previous.classList.remove('selected');
+            }else{
+                document.getElementById('step_15').classList.remove('selected')
+            }
+            
+            if (cymbalVetor[j] == 1){
+                playSound(cymbal)
+            }
+            if (snareVetor[j] == 1){
+                playSound(snare)
+            }
+            if (kickVetor[j] == 1){
+                playSound(kick)
+            }
+            if (j < 15){
+                j++;
+            }else{
+                j =0;
+            }
+            
+        },500)
+    }  
+
+    function playSound(id_part){
+        id_part.pause();
+        id_part.currentTime = 0;
+        id_part.play();
+    }   
+    
+    
+</script>
